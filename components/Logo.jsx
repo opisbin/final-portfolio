@@ -1,8 +1,12 @@
-import React from 'react'
+import Link from "next/link"
+
 
 const Logo = () => {
   return (
-    <div>Logo</div>
+    <Link href="/" className="text-[28px] font-normal">
+      Meherab
+      <span className="text-accent text-4xl">.</span>
+    </Link>
   )
 }
 

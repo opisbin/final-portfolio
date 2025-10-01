@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import { TypeAnimation } from 'react-type-animation';
 import {MdArrowOutward} from 'react-icons/md'
 import {HiOutlinePhone, HiOutlineMail} from 'react-icons/hi'
+import Pattern from '@/components/pattern';
 
 // components
 import Blob from '@/components/Blob';
@@ -20,6 +21,8 @@ const Home = () => {
       }}
       className='h-screen flex items-center'
     >
+      {/* pattern */}
+      <Pattern />
       <div className='flex flex-col xl:flex-row items-center justify-between w-full'>
 
         {/* text */}
