@@ -68,7 +68,7 @@ const Home = () => {
             </div>
           </div>
           {/* Social Links */}
-          <Socials 
+          <Socials
           containerStyles="flex 2xl:flex-col gap-6 xl:hidden 2xl:flex 2xl:absolute 2xl:top-1/2 2xl:right-2 2xl:transform 2xl:-translate-x-1/2 2xl:-translate-y-1/2" iconStyles="bg-accent text-white hover:bg-accent-hover transition w-[48px] h-[48px] text-[22px] flex items-center justify-center rounded-full cursor-pointer " />
 
         </div>

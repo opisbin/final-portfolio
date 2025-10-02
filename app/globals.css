@@ -72,3 +72,8 @@ body {
 .btn-white {
   @apply bg-white text-primary hover:bg-white/90;
 }
+
+/* swiper css */
+.swiper {
+  margin: 0 !important;
+}
