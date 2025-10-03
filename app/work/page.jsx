@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 
 // swiper
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper/modules';
+import { Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
@@ -114,7 +114,11 @@ const Work = () => {
               return (
                 <TabsContent key={category} value={category}>
                   <Swiper
-                    modules={[Pagination]}
+                    modules={[Pagination, Autoplay]}
+                    autoplay={{
+                      delay: 2500,
+                      disableOnInteraction: false,
+                    }}
                     pagination={{clickable: true, dynamicBullets: true}}
                     className='h-max xl:h-[460px]'
                   >
