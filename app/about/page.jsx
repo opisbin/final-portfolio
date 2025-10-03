@@ -5,7 +5,7 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 import Image from 'next/image';
 
 // Components
-import Stats from '@/components/stats';
+import Stats from '@/components/Stats';
 import Testimonial from '@/components/Testimonial';
 import Info from '@/components/Info';
 import Journey from '@/components/Journey';

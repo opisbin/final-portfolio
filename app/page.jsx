@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 import { TypeAnimation } from 'react-type-animation';
 import {MdArrowOutward} from 'react-icons/md'
 import {HiOutlinePhone, HiOutlineMail} from 'react-icons/hi'
-import Pattern from '@/components/pattern';
+import Pattern from '@/components/Pattern';
 
 // components
 import Blob from '@/components/Blob';
