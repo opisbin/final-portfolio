@@ -28,6 +28,7 @@ const About = () => {
         <div className='flex flex-col xl:flex-row items-center gap-24 w-full h-[680px]'>
           {/* Image & Social Icons */}
           <div className='hidden xl:flex flex-col w-full h-full pt-14 max-w-[430px] relative'>
+            <div className='relative'>
             <Image
               src="/assets/anime.png"
               width={320}
@@ -37,7 +38,8 @@ const About = () => {
            />
 
             {/* Overlay */}
-            <div className='w-full h-[60px] absolute left-0 top-[420px] right-0 bg-gradient-to-t from-primary via-primary/90 z-30'></div>
+            <div className='w-full h-[60px] absolute left-0 bottom-0 right-0 bg-gradient-to-t from-primary via-primary/90 z-30'></div>
+            </div>
             {/* blob */}
             <div className='absolute top-[80px] -left-[80px] z-10'>
               <Blob containerStyle="w-[420px] h-[420px]"/>
