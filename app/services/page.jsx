@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 // import swiper react components
 import { Swiper, SwiperSlide } from 'swiper/react';
 // import swiper modules
-import { Pagination } from 'swiper/modules';
+import { Pagination, Autoplay } from 'swiper/modules';
 // import swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -68,7 +68,11 @@ const Services = () => {
             640: { slidesPerView: 2, },
             1024: { slidesPerView: 3, },
           }}
-          modules={[Pagination]}
+          modules={[Pagination, Autoplay]}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
           pagination={{ clickable: true, dynamicBullets: true }}
           className='h-[350px]'
         >
