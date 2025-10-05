@@ -22,8 +22,8 @@ const projects = [
     title: 'GitHub Random Finder',
     description: 'React + Tailwind GitHub Random Repo Finder',
     image: '/assets/work/tthumb1.png',
-    link: '',
-    github: '',
+    link: 'https://github-random-repo-drab.vercel.app/',
+    github: 'https://github.com/opisbin/github-random-repo',
     tech: ['React', 'tailwind', 'GitHub API', 'Potter Authentication'],
   },
   {
@@ -32,8 +32,8 @@ const projects = [
     title: 'Ai Powered Resume Checker',
     description: 'Next.js + Tailwind AI Resume Checker with Authentication',
     image: '/assets/work/tthumb2.png',
-    link: '',
-    github: '',
+    link: 'https://resumai-gamma.vercel.app/',
+    github: 'https://github.com/opisbin/Ai-Resume-Analizer',
     tech: ['Next.js', 'Tailwind', 'OpenAI API'],
   },
   {
@@ -42,8 +42,8 @@ const projects = [
     title: 'Developer Portfolio',
     description: 'React + Tailwind Developer Portfolio Website',
     image: '/assets/work/tthumb3.png',
-    link: '',
-    github: '',
+    link: 'https://meherabsprofile.vercel.app/',
+    github: 'https://github.com/opisbin/Personal-Profile',
     tech: ['React', 'Tailwind', 'Gsap'],
   },
   {
@@ -149,13 +149,13 @@ const Work = () => {
                               </div>
                               {/* Button */}
                               <div className='flex flex-col sm:flex-row gap-4 items-start'>
-                                <Link href={project.link}>
+                                <Link href={project.link} target='_blank'>
                                   <button className='btn btn-sm btn-accent flex gap-2'>
                                     <MdArrowOutward className='text-sm'/>
                                     <span>Live Project</span>
                                   </button>
                                 </Link>
-                                <Link href={project.github}>
+                                <Link href={project.github} target='_blank'>
                                   <button className='btn btn-sm btn-white flex gap-2'>
                                     <FaGithub className='text-xl'/>
                                     <span>GitHub Repo</span>
