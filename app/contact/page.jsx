@@ -92,7 +92,7 @@ const Contact = () => {
                 <h2 className='h2 mb-6'>
                   Get in <span className='text-accent'>Touch</span>
                 </h2>
-                <p className='max-w-[460px]'>Lorem, ipsum dolor sit amet consectetur adipisicing elit..</p>
+                <p className='max-w-[460px]'>I'm here to help you with your project needs. Let's connect and discuss how we can work together.</p>
               </div>
               {/* contact info */}
               <div className='flex flex-col gap-8 mb-6 xl:mb-0'>
@@ -204,8 +204,8 @@ const Contact = () => {
                 )}
 
                 {/* submit button */}
-                <button 
-                  type="submit" 
+                <button
+                  type="submit"
                   disabled={loading}
                   className='btn btn-lg btn-accent disabled:opacity-50'
                 >

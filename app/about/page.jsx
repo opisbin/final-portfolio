@@ -63,7 +63,10 @@ const About = () => {
                 <span className='text-accent'>Meherab</span> Hossain
               </h2>
               <p className='max-w-[540px] mb-12'>
-                I'm a passionate web developer and designer with a knack for creating visually appealing and user-friendly websites. With a strong foundation in React Next.js Typescript JavaScript and other Framework and Libraries, I bring ideas to life on the web.
+                Innovation-driven Software Engineer & UX Designer with a computer science foundation and 5+ years of experience in building
+                user-centered digital solutions. Skilled in front-end development, wireframing, prototyping, and UX writing, with hands-on
+
+                expertise in optimizing interfaces and redesigning products using analytics and modern design trends.
               </p>
 
               <div className='flex flex-col items-start gap-16'>

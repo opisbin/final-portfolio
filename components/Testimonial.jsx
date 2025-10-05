@@ -16,21 +16,21 @@ import {ImQuotesLeft} from 'react-icons/im'
 const testimonial = [
     {
         message: "Meherab is an exceptional web developer who consistently delivers high-quality work. His attention to detail and problem-solving skills are impressive.",
-        name: "John Doe",
+        name: "Ashraf Uddin",
     },
     {
         message: "Meherab is a pleasure to work with. He is always open to feedback and goes above and beyond to ensure client satisfaction.",
-        name: "Jane Smith",
+        name: "Maria Smith",
     },
     {
         message: "Meherab's technical skills are top-notch. He is able to tackle complex challenges with ease and delivers results on time.",
-        name: "Alice Johnson",
+        name: "Rabindro Dutta",
     },
 ]
 const Testimonial = () => {
   return (
     <Swiper
-        // modules={[Autoplay]}
+        modules={[Autoplay]}
         loop={false}
         autoplay={{ delay: 4000, disableOnInteraction: false }} className='w-full max-w-[310px] md:max-w-[520px] bg-secondary rounded-lg'>
             {testimonial.map((person, index) => {
