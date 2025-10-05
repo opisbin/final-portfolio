@@ -6,6 +6,7 @@ import { TypeAnimation } from 'react-type-animation';
 import {MdArrowOutward} from 'react-icons/md'
 import {HiOutlinePhone, HiOutlineMail} from 'react-icons/hi'
 import Pattern from '@/components/Pattern';
+import Link from 'next/link';
 
 // components
 import Blob from '@/components/Blob';
@@ -44,12 +45,12 @@ const Home = () => {
           </h1>
           <p className='max-w-[500px] mb-[44px]'>I design and develop user-friendly interfaces that enhance user experience and drive engagement & satisfaction.
           </p>
-          <button className='btn btn-lg btn-accent mb-16'>
+          <Link href="/contact" className='btn btn-lg btn-accent mb-16'>
             <div className='flex items-center gap-3'>
               <span>Let's talk.</span>
               <MdArrowOutward className='text-xl'/>
             </div>
-          </button>
+          </Link>
           {/* Contact info */}
           <div className='flex flex-col xl:flex-row xl:items-center gap-4 xl:gap-8 mb-12 xl:mb-0'>
             {/* Phone */}

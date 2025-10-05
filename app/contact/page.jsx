@@ -1,4 +1,5 @@
 "use client";
+import { useState } from 'react';
 import { motion } from 'framer-motion'
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
@@ -16,6 +17,65 @@ import {HiOutlineMapPin, HiOutlineArrowLongRight} from "react-icons/hi2"
 import {HiOutlinePhone, HiOutlineMail} from "react-icons/hi"
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    firstname: '',
+    lastname: '',
+    email: '',
+    service: '',
+    message: ''
+  });
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState('');
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleServiceChange = (value) => {
+    setFormData({
+      ...formData,
+      service: value
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError('');
+    setSuccess(false);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSuccess(true);
+        setFormData({
+          firstname: '',
+          lastname: '',
+          email: '',
+          service: '',
+          message: ''
+        });
+      } else {
+        setError('Failed to send message. Please try again.');
+      }
+    } catch (error) {
+      setError('Something went wrong. Please try again.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -61,7 +121,7 @@ const Contact = () => {
             </div>
             {/* form */}
             <div className='flex-1'>
-              <form className='flex flex-col gap-6 items-start'>
+              <form className='flex flex-col gap-6 items-start' onSubmit={handleSubmit}>
                 {/* first and last name */}
                 <div className='flex flex-col xl:flex-row gap-6 w-full'>
                   <div className='w-full'>
@@ -72,6 +132,8 @@ const Contact = () => {
                     id='firstname'
                     name='firstname'
                     placeholder='First Name'
+                    value={formData.firstname}
+                    onChange={handleChange}
                     required />
                   </div>
                   <div className='w-full'>
@@ -82,6 +144,8 @@ const Contact = () => {
                     id='lastname'
                     name='lastname'
                     placeholder='Last Name'
+                    value={formData.lastname}
+                    onChange={handleChange}
                     required />
                 </div>
                 </div>
@@ -93,20 +157,23 @@ const Contact = () => {
                     <Input
                     id='email'
                     name='email'
+                    type='email'
                     placeholder='your@email.com'
+                    value={formData.email}
+                    onChange={handleChange}
                     required />
                 </div>
                 {/* Select */}
                 <div className='w-full'>
                      <Label htmlFor='email'>I'm interested in <span className='text-accent'>*</span></Label>
-                     <Select name='service' required>
+                     <Select value={formData.service} onValueChange={handleServiceChange} required>
                        <SelectTrigger
                         id='service'
                         className='w-full !h-12 bg-white/5 border-white/10 px-4'>
                          <SelectValue placeholder='Select a service' />
                        </SelectTrigger>
                        <SelectContent className="bg-black border-white/20">
-                        <SelectItem value='fronend'>Front End Development</SelectItem>
+                        <SelectItem value='frontend'>Front End Development</SelectItem>
                         <SelectItem value='uiux'>UI & UX Design</SelectItem>
                         <SelectItem value='backend'>Back End Development</SelectItem>
                       </SelectContent>
@@ -122,13 +189,30 @@ const Contact = () => {
                     name='message'
                     placeholder='Type your message here...'
                     className="min-h-[160px] bg-white/5 border-white/10 focus-visible:border-accent focus-visible:ring-accent focus-visible:ring-[1px] resize-none p-4 selection:bg-accent placeholder:text-white/50"
+                    value={formData.message}
+                    onChange={handleChange}
                     required
                   />
                 </div>
+
+                {/* Status Messages */}
+                {error && (
+                  <div className="text-red-400 text-sm">{error}</div>
+                )}
+                {success && (
+                  <div className="text-green-400 text-sm">Message sent successfully! I'll get back to you soon.</div>
+                )}
+
                 {/* submit button */}
-                <button className='btn btn-lg btn-accent'>
+                <button 
+                  type="submit" 
+                  disabled={loading}
+                  className='btn btn-lg btn-accent disabled:opacity-50'
+                >
                   <div className='flex items-center gap-3'>
-                    <span className='font-medium'>Send Message</span>
+                    <span className='font-medium'>
+                      {loading ? 'Sending...' : 'Send Message'}
+                    </span>
                     <HiOutlineArrowLongRight className='text-xl' />
                   </div>
                 </button>
