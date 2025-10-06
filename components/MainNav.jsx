@@ -9,7 +9,7 @@ const MainNav = () => {
         <div className='flex flex-col h-full items-center justify-between'>
             <Logo />
             <NavLinks containerStyles="flex flex-col gap-6"/>
-            <a href='https://drive.google.com/file/d/1yNVigznlzbz5e5N0Bkd5YkTMA1-qlW2S/view?usp=sharing' target='_blank' rel='noreferrer' className='btn btn-lg btn-tertiary mb-16'>
+            <a href='./cv.pdf' target='_blank' rel='noreferrer' className='btn btn-lg btn-tertiary mb-16'>
               <div className='flex items-center gap-3'>
                   <span>
                     Download CV.
