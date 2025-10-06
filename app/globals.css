@@ -84,3 +84,15 @@ body {
 .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
   @apply bg-accent;
 }
+
+/* ReCAPTCHA styling */
+.recaptcha-container {
+  transform: scale(0.9);
+  transform-origin: 0 0;
+}
+
+@media (max-width: 640px) {
+  .recaptcha-container {
+    transform: scale(0.8);
+  }
+}

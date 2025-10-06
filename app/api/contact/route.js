@@ -1,14 +1,31 @@
 import { Resend } from 'resend';
 
-const resend = new Resend('re_YsAnLcXV_CrEnUppLrZjYenHN8S4UwoDt');
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request) {
   try {
-    const { firstname, lastname, email, service, message } = await request.json();
+    const { firstname, lastname, email, service, message, token } = await request.json();
 
     // Validate required fields
     if (!firstname || !lastname || !email || !service || !message) {
       return Response.json({ error: 'All fields are required' }, { status: 400 });
+    }
+
+    // Verify ReCAPTCHA token
+    if (!token) {
+      return Response.json({ error: 'CAPTCHA verification is required' }, { status: 400 });
+    }
+
+    const verificationResponse = await fetch('https://www.google.com/recaptcha/api/siteverify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: `secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${token}`,
+    });
+
+    const verificationData = await verificationResponse.json();
+
+    if (!verificationData.success) {
+      return Response.json({ error: 'CAPTCHA verification failed. Please try again.' }, { status: 400 });
     }
 
     // Send email to yourself

@@ -1,9 +1,10 @@
 "use client";
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { motion } from 'framer-motion'
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
+import ReCAPTCHA from "react-google-recaptcha";
 
 import {
   Select,
@@ -27,6 +28,7 @@ const Contact = () => {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState('');
+  const recaptchaRef = useRef(null);
 
   const handleChange = (e) => {
     setFormData({
@@ -48,13 +50,21 @@ const Contact = () => {
     setError('');
     setSuccess(false);
 
+    // Get ReCAPTCHA token
+    const token = recaptchaRef.current.getValue();
+    if (!token) {
+      setError("Please complete the CAPTCHA verification.");
+      setLoading(false);
+      return;
+    }
+
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, token }),
       });
 
       if (response.ok) {
@@ -66,13 +76,18 @@ const Contact = () => {
           service: '',
           message: ''
         });
+        recaptchaRef.current.reset();
       } else {
-        setError('Failed to send message. Please try again.');
+        const data = await response.json();
+        setError(data.error || 'Failed to send message. Please try again.');
       }
     } catch (error) {
       setError('Something went wrong. Please try again.');
     } finally {
       setLoading(false);
+      if (recaptchaRef.current) {
+        recaptchaRef.current.reset();
+      }
     }
   };
 
@@ -192,6 +207,16 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                     required
+                  />
+                </div>
+
+                {/* ReCAPTCHA */}
+                <div className='w-full'>
+                  <ReCAPTCHA
+                    ref={recaptchaRef}
+                    sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+                    theme="dark"
+                    className="recaptcha-container"
                   />
                 </div>
 
