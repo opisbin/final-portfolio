@@ -24,7 +24,7 @@ const projects = [
     image: '/assets/work/tthumb1.png',
     link: 'https://github-random-repo-drab.vercel.app/',
     github: 'https://github.com/opisbin/github-random-repo',
-    tech: ['React', 'tailwind', 'GitHub API', 'Potter Authentication'],
+    tech: ['React', 'tailwind', 'GitHub API'],
   },
   {
     id: 2,
@@ -34,7 +34,7 @@ const projects = [
     image: '/assets/work/tthumb2.png',
     link: 'https://resumai-gamma.vercel.app/',
     github: 'https://github.com/opisbin/Ai-Resume-Analizer',
-    tech: ['Next.js', 'Tailwind', 'OpenAI API'],
+    tech: ['Next.js', 'Tailwind', 'OpenAI API', 'Potter Authentication'],
   },
   {
     id: 3,
