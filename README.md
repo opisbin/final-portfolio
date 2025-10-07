@@ -1,6 +1,4 @@
-Perfect 😎 — here’s your **enhanced but still minimal and beautiful README** for your portfolio repo, complete with badges, a banner placeholder, and a live demo section:
 
-````markdown
 ![Portfolio Banner](<img width="1913" height="892" alt="image" src="https://github.com/user-attachments/assets/dcc8f574-3f47-4ee6-aeae-6f00aea4ae67" />
 )
 
