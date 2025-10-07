@@ -1,5 +1,5 @@
 
-![Portfolio Banner]( <img width="1900" height="873" alt="image" src="https://github.com/user-attachments/assets/976bcd5f-78ec-4f80-9ab8-f1b1c26326fd" />
+![Portfolio Banner]( <img width="1492" height="810" alt="image" src="https://github.com/user-attachments/assets/6bd9a2e4-78b6-4243-ad5d-9f37db088203" />
  )
 
 # 🌐 Final Portfolio
