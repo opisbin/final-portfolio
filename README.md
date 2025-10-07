@@ -1,8 +1,4 @@
-
-![Portfolio Banner]( <img width="1492" height="810" alt="image" src="https://github.com/user-attachments/assets/6bd9a2e4-78b6-4243-ad5d-9f37db088203" />
- )
-
-# 🌐 Final Portfolio
+# 🌐Portfolio
 
 A sleek, responsive personal portfolio built with **Next.js** — showcasing my projects, skills, and creative journey as a developer & designer.
 
