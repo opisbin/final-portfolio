@@ -1,6 +1,11 @@
 
 const journey = [
     {
+        years: "October 2025 - Present",
+        role: "Product Designer (Part time)",
+        institution: "Fleek Bangladesh",
+    },
+    {
         years: "Aug 2025 - Present",
         role: "Software Engineer | UIUX",
         institution: "Easy Software Solutions",
