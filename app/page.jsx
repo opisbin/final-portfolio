@@ -65,7 +65,7 @@ const Home = () => {
               <span className='text-accent'>
                 <HiOutlineMail className='text-xl' />
               </span>
-              <span>meherabh016@gmail.com</span>
+              <span>hmeherab@outlook.com</span>
             </div>
           </div>
           {/* Social Links */}
